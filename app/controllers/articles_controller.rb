@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    render :shoe_detail if params[:detail]
   end
 
   def edit
