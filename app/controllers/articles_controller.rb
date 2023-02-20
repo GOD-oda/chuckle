@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
 
-    redirect_to articles_url
+    render turbo_stream: turbo_stream.remove(@article)
   end
 
   private
