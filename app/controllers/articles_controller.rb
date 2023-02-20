@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to @article
+      render :show
     else
       render :edit, status: :unprocessable_entity
     end
