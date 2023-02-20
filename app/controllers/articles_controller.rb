@@ -10,6 +10,10 @@ class ArticlesController < ApplicationController
     render :shoe_detail if params[:detail]
   end
 
+  def new
+    @article = Article.new
+  end
+
   def edit
   end
 
