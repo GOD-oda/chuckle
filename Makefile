@@ -9,3 +9,8 @@ up:
 .PHONY: down
 down:
 	docker compose down --remove-orphans
+
+.PHONY: restart
+restart:
+	@make down
+	@make up
