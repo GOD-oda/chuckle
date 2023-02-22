@@ -1,4 +1,8 @@
-FROM ruby:3.2
+FROM ruby:3.2.0
+
+RUN apt-get update -qq \
+    && apt-get install -y npm \
+    && npm install --global yarn
 
 RUN mkdir /myapp
 WORKDIR /myapp
@@ -7,7 +11,6 @@ COPY Gemfile.lock /myapp/Gemfile.lock
 
 # Bundlerの不具合対策(1)
 RUN gem update --system
-RUN bundle update --bundler
 
 RUN bundle install
 COPY . /myapp
